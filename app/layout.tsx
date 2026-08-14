@@ -44,21 +44,12 @@ export const metadata: Metadata = {
     title: "Jordan Andrade — Full-stack, Dados & IA",
     description:
       "Produtos digitais construídos entre código, dados e negócio.",
-    images: [
-      {
-        url: "/og.png",
-        width: 1731,
-        height: 909,
-        alt: "Jordan Andrade — Full-stack, Dados & IA",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jordan Andrade — Full-stack, Dados & IA",
     description:
       "Produtos digitais construídos entre código, dados e negócio.",
-    images: ["/og.png"],
   },
 };
 

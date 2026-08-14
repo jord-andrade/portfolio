@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local planning and working files (never publish)
+/plano-github-publico.md
+/linkedin-reformulacao.md
+/linkedin-revisao-defensavel.md
+/tmp/
