@@ -12,7 +12,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="footer-links" aria-label="Links sociais">
-          <a href="https://github.com/jandrade-dev" target="_blank" rel="noreferrer">
+          <a href="https://github.com/jord-andrade" target="_blank" rel="noreferrer">
             GitHub <span aria-hidden="true">↗</span>
           </a>
           <a
