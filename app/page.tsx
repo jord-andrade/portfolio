@@ -40,7 +40,7 @@ export default function Home() {
     url: "https://jord-andrade.dev",
     jobTitle: "Desenvolvedor Full-stack e Cientista de Dados",
     sameAs: [
-      "https://github.com/jandrade-dev",
+      "https://github.com/jord-andrade",
       "https://www.linkedin.com/in/jordan-andrade-lopez/",
     ],
   };
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
             <a
               className="text-link"
-              href="https://github.com/jandrade-dev"
+              href="https://github.com/jord-andrade"
               target="_blank"
               rel="noreferrer"
             >
