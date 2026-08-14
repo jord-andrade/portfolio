@@ -16,7 +16,7 @@ export default function SiteFooter() {
             GitHub <span aria-hidden="true">↗</span>
           </a>
           <a
-            href="https://www.linkedin.com/in/jordan-andrade-lopez/"
+            href="https://www.linkedin.com/in/jord-andrade/"
             target="_blank"
             rel="noreferrer"
           >
