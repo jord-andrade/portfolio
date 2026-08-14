@@ -1,56 +1,11 @@
-// import { dirname } from "path";
-// import { fileURLToPath } from "url";
-// import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTypeScript from "eslint-config-next/typescript";
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTypeScript,
+  globalIgnores([".next/**", "out/**", "build/**", "node_modules/**", "next-env.d.ts"]),
+]);
 
-// const compat = new FlatCompat({
-//   baseDirectory: __dirname,
-// });
-
-// const eslintConfig = [
-//   ...compat.extends("next/core-web-vitals", "next/typescript"),
-// ];
-
-// export default eslintConfig;
-
-
-
-// eslint.config.mjs
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import pluginNext from '@next/eslint-plugin-next';
-import pluginTs from '@typescript-eslint/eslint-plugin';
-
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-});
-
-export default [
-  ...compat.config({
-    extends: ['next/core-web-vitals'],
-    rules: {
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-          caughtErrorsIgnorePattern: '^_',
-        },
-      ],
-      '@typescript-eslint/no-empty-object-type': 'off',
-    },
-  }),
-  {
-    plugins: {
-      '@next/next': pluginNext,
-      '@typescript-eslint': pluginTs,
-    },
-    rules: {
-      ...pluginNext.configs.recommended.rules,
-      ...pluginNext.configs['core-web-vitals'].rules,
-      ...pluginTs.configs.recommended.rules,
-    },
-  },
-];
+export default eslintConfig;
