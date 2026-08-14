@@ -17,14 +17,14 @@ const displayFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jandrade.dev"),
+  metadataBase: new URL("https://jord-andrade.dev"),
   title: {
     default: "Jordan Andrade — Full-stack, Dados & IA",
     template: "%s — Jordan Andrade",
   },
   description:
     "Portfólio de Jordan Andrade, desenvolvedor full-stack e cientista de dados. Produtos digitais, plataformas web e experiências orientadas por dados.",
-  authors: [{ name: "Jordan Andrade", url: "https://jandrade.dev" }],
+  authors: [{ name: "Jordan Andrade", url: "https://jord-andrade.dev" }],
   creator: "Jordan Andrade",
   keywords: [
     "Jordan Andrade",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://jandrade.dev",
+    url: "https://jord-andrade.dev",
     siteName: "Jordan Andrade",
     title: "Jordan Andrade — Full-stack, Dados & IA",
     description:

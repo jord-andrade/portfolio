@@ -30,7 +30,7 @@ export default function SiteFooter() {
 
       <div className="shell footer-bottom">
         <span>© {new Date().getFullYear()} Jordan Andrade</span>
-        <span>jandrade.dev</span>
+        <span>jord-andrade.dev</span>
       </div>
     </footer>
   );

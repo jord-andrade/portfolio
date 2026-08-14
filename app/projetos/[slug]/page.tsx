@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     openGraph: {
       title: `${project.name} — Estudo de caso`,
       description: project.summary,
-      url: `https://jandrade.dev/projetos/${project.slug}`,
+      url: `https://jord-andrade.dev/projetos/${project.slug}`,
     },
   };
 }

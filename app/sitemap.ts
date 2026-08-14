@@ -3,7 +3,7 @@ import { projects } from "./data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projectPages = projects.map((project) => ({
-    url: `https://jandrade.dev/projetos/${project.slug}`,
+    url: `https://jord-andrade.dev/projetos/${project.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://jandrade.dev",
+      url: "https://jord-andrade.dev",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,

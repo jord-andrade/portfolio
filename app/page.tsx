@@ -37,7 +37,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Jordan Andrade",
-    url: "https://jandrade.dev",
+    url: "https://jord-andrade.dev",
     jobTitle: "Desenvolvedor Full-stack e Cientista de Dados",
     sameAs: [
       "https://github.com/jandrade-dev",
@@ -82,7 +82,7 @@ export default function Home() {
 
         <div className="hero-canvas" aria-hidden="true">
           <div className="canvas-topline">
-            <span>jandrade.dev</span>
+            <span>jord-andrade.dev</span>
             <span>BR / 2026</span>
           </div>
           <div className="canvas-orbit orbit-one" />
