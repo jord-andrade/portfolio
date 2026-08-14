@@ -41,7 +41,7 @@ export default function Home() {
     jobTitle: "Desenvolvedor Full-stack e Cientista de Dados",
     sameAs: [
       "https://github.com/jord-andrade",
-      "https://www.linkedin.com/in/jordan-andrade-lopez/",
+      "https://www.linkedin.com/in/jord-andrade/",
     ],
   };
 
