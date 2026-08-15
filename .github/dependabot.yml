@@ -12,6 +12,10 @@ updates:
         update-types:
           - version-update:semver-minor
           - version-update:semver-patch
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     groups:
       production-dependencies:
         dependency-type: production
@@ -34,3 +38,7 @@ updates:
         update-types:
           - version-update:semver-minor
           - version-update:semver-patch
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
