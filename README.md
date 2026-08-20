@@ -6,10 +6,10 @@
 
 ![Portfolio home page](public/portfolio-preview.png)
 
-A product-focused portfolio for selected work across full-stack engineering,
-data and AI. The interface is intentionally in Portuguese; the repository
-documentation is in English so the implementation is easy to evaluate
-internationally.
+A personal, product-focused portfolio for selected work across full-stack
+engineering, data and AI. The interface is available in Portuguese and English;
+the repository documentation remains in English so the implementation is easy
+to evaluate internationally.
 
 [Live site](https://jord-andrade.dev) · [Selected work](https://jord-andrade.dev/#projetos) · [GitHub profile](https://github.com/jord-andrade)
 
@@ -17,6 +17,8 @@ internationally.
 
 - a responsive, accessible interface built with the Next.js App Router;
 - typed, content-driven case studies without an external CMS;
+- localized home and case-study routes in Portuguese and English;
+- evidence blocks that distinguish public outcomes from work in development;
 - first-party metadata, Open Graph images, sitemap and robots routes;
 - a small dependency surface and a reproducible production build;
 - automated checks for linting, types, public content and the build itself.
@@ -56,6 +58,10 @@ npm run dev
 
 Open <http://localhost:3000>.
 
+To make WhatsApp the primary contact channel, copy `.env.example` to `.env.local`
+and set `NEXT_PUBLIC_WHATSAPP_NUMBER` to digits only, including the country code.
+Without this value, the interface explicitly falls back to email.
+
 ## Quality checks
 
 ```bash
@@ -74,7 +80,8 @@ and pushes to `main` are checked on GitHub Actions.
 app/
 ├── components/          reusable interface components
 ├── data/                typed project content
-├── projetos/[slug]/     case-study pages
+├── projetos/[slug]/     Portuguese case-study pages
+├── en/                  English home and case-study pages
 ├── opengraph-image.tsx  generated social image
 ├── robots.ts            crawler policy
 └── sitemap.ts           canonical public routes
@@ -91,8 +98,8 @@ tests/                   public-contract checks
 - The portfolio describes product decisions and public-safe outcomes. Private
   source code, customer information and operational datasets are intentionally
   excluded.
-- The interface currently has one language. Repository documentation uses
-  English rather than duplicating the full site.
+- The site keeps public-product evidence separate from in-development claims;
+  no adoption or business-impact metric is presented without a source.
 
 ## Security and responsible disclosure
 
