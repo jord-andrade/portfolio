@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), "utf8");
@@ -26,11 +26,11 @@ test("repository documentation contains reproducible commands", async () => {
   assert.doesNotMatch(readme, /seu-usuario|seu-repositorio/);
 });
 
-test("social images contain the current public identity", async () => {
-  const image = await read("app/social-image.tsx");
+test("social metadata uses the current portfolio card", async () => {
+  const layout = await read("app/layout.tsx");
+  const image = await stat(new URL("../public/og-system.png", import.meta.url));
 
-  assert.match(image, />JORDAN</);
-  assert.match(image, />ANDRADE</);
-  assert.match(image, /JORD-ANDRADE\.DEV/);
-  assert.doesNotMatch(image, /[^-]JANDRADE\.DEV/);
+  assert.match(layout, /\/og-system\.png/);
+  assert.match(layout, /Jordan Andrade — Full-stack, Data & AI/);
+  assert.ok(image.size > 100_000);
 });

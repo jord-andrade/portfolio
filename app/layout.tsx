@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
+import LocaleSync from "./components/LocaleSync";
 import "./globals.css";
 
 const bodyFont = DM_Sans({
@@ -23,19 +24,22 @@ export const metadata: Metadata = {
     template: "%s — Jordan Andrade",
   },
   description:
-    "Portfólio de Jordan Andrade, desenvolvedor full-stack e cientista de dados. Produtos digitais, plataformas web e experiências orientadas por dados.",
+    "Portfólio de Jordan Andrade, desenvolvedor full-stack focado em produtos de dados e ferramentas de IA.",
   authors: [{ name: "Jordan Andrade", url: "https://jord-andrade.dev" }],
   creator: "Jordan Andrade",
   keywords: [
     "Jordan Andrade",
     "desenvolvedor full-stack",
-    "cientista de dados",
+    "produtos de dados",
     "Next.js",
     "TypeScript",
     "Python",
     "portfólio",
   ],
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { "pt-BR": "/", en: "/en" },
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -44,12 +48,21 @@ export const metadata: Metadata = {
     title: "Jordan Andrade — Full-stack, Dados & IA",
     description:
       "Produtos digitais construídos entre código, dados e negócio.",
+    images: [
+      {
+        url: "/og-system.png",
+        width: 1745,
+        height: 909,
+        alt: "Jordan Andrade — Full-stack, Data & AI",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jordan Andrade — Full-stack, Dados & IA",
     description:
       "Produtos digitais construídos entre código, dados e negócio.",
+    images: ["/og-system.png"],
   },
 };
 
@@ -61,9 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       data-scroll-behavior="smooth"
     >
       <body>
-        <a className="skip-link" href="#conteudo">
-          Pular para o conteúdo
-        </a>
+        <LocaleSync />
         <SiteHeader />
         {children}
         <SiteFooter />

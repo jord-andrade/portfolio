@@ -2,16 +2,17 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { email, siteContent, type Locale } from "../data/site-content";
 
-const links = [
-  { href: "/#projetos", label: "Projetos" },
-  { href: "/#expertise", label: "Expertise" },
-  { href: "/#sobre", label: "Sobre" },
-  { href: "/#contato", label: "Contato" },
-];
+type MobileMenuProps = {
+  alternateHref: string;
+  links: Array<{ href: string; label: string }>;
+  locale: Locale;
+};
 
-export default function MobileMenu() {
+export default function MobileMenu({ alternateHref, links, locale }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const copy = siteContent[locale].navigation;
 
   useEffect(() => {
     document.body.dataset.menuOpen = open ? "true" : "false";
@@ -34,7 +35,7 @@ export default function MobileMenu() {
         type="button"
         aria-expanded={open}
         aria-controls="mobile-navigation"
-        aria-label={open ? "Fechar menu" : "Abrir menu"}
+        aria-label={open ? copy.menuClose : copy.menuOpen}
         onClick={() => setOpen((current) => !current)}
       >
         <span />
@@ -46,7 +47,7 @@ export default function MobileMenu() {
         id="mobile-navigation"
         aria-hidden={!open}
       >
-        <nav aria-label="Navegação móvel">
+        <nav aria-label={copy.mobileLabel}>
           {links.map((link, index) => (
             <Link
               href={link.href}
@@ -60,13 +61,24 @@ export default function MobileMenu() {
           ))}
         </nav>
 
-        <a
-          className="mobile-menu-email"
-          href="mailto:andradelopesjordan@gmail.com"
-          tabIndex={open ? 0 : -1}
-        >
-          andradelopesjordan@gmail.com
-        </a>
+        <div className="mobile-menu-bottom">
+          <Link
+            className="mobile-language-switch"
+            href={alternateHref}
+            hrefLang={locale === "en" ? "pt-BR" : "en"}
+            tabIndex={open ? 0 : -1}
+            onClick={() => setOpen(false)}
+          >
+            {copy.languageShort} · {copy.languageLabel}
+          </Link>
+          <a
+            className="mobile-menu-email"
+            href={`mailto:${email}`}
+            tabIndex={open ? 0 : -1}
+          >
+            {email}
+          </a>
+        </div>
       </div>
     </div>
   );
