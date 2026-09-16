@@ -203,14 +203,14 @@ export const projects: Project[] = [
     headline:
       "Explore alimentos e compare nutrientes sem perder o contexto da fonte.",
     summary:
-      "Um explorador de dados nutricionais derivados do USDA, com busca, filtros, comparação, cálculo por porção e exportação em uma interface legível.",
+      "Um explorador público de dados nutricionais do USDA, com 13,6 mil alimentos em três idiomas, fichas com porções reais, registros relacionados e rankings por nutriente, além de comparação, código de barras e diário alimentar.",
     website: "https://datanutri.com",
     cover: "/dataNutri/cover_nutri.png",
     visual: {
       variant: "nutrition",
       eyebrow: "Busca → comparação → contexto",
       statement: "Uma base técnica organizada para investigação, não para prescrição.",
-      signals: ["USDA", "Comparação", "CSV"],
+      signals: ["USDA", "3 idiomas", "Rankings"],
     },
     accent: "#1685a5",
     accentSoft: "#dff6fb",
@@ -219,44 +219,44 @@ export const projects: Project[] = [
     challenge:
       "Bases nutricionais são extensas, cheias de valores ausentes e difíceis de comparar. O desafio era permitir investigação rápida sem transformar ausência em zero, simplificar demais a fonte ou apresentar uma métrica experimental como verdade clínica.",
     response:
-      "A solução oferece busca, filtros e paginação determinística; páginas de alimento renderizadas no servidor; comparação de nutrientes; ranking de similares; cálculo por porção e exportação CSV. A aplicação consulta uma réplica somente leitura e mantém os dados originais acessíveis.",
+      "Cada alimento tem uma página renderizada no servidor com a tabela por 100 g, as porções caseiras da USDA, registros similares e do mesmo nome, e texto escrito a partir dos próprios valores nos registros mais buscados. Doze páginas de ranking ordenam o catálogo por nutriente. Uma página de metodologia documenta datasets, valores diários, ausências e o escore. Busca com ranking por relevância no PostgreSQL, comparação, leitura de código de barras, diário e receitas completam o produto, servido em inglês, português e espanhol.",
     evidence: [
       {
-        value: "Online",
-        label: "produto público",
-        detail: "A experiência pode ser acessada e avaliada no domínio do projeto.",
+        value: "13,6 mil",
+        label: "alimentos em 3 idiomas",
+        detail: "Foundation, SR Legacy e FNDDS com nomes traduzidos à mão; Branded Foods com busca por texto completo.",
       },
       {
         value: "USDA",
         label: "fonte declarada",
-        detail: "A origem dos dados e os limites do score permanecem explícitos.",
+        detail: "Origem, release, valores diários e limites do escore documentados na página de metodologia.",
       },
       {
-        value: "5 fluxos",
-        label: "entregas verificáveis",
-        detail: "Busca, comparação, similares, cálculo por porção e exportação CSV.",
+        value: "12 rankings",
+        label: "páginas por nutriente",
+        detail: "Os 100 alimentos com mais proteína, fibra, potássio, selênio, lisina e outros por 100 g, com cobertura por dataset.",
       },
     ],
     features: [
       {
-        title: "Exploração previsível",
+        title: "Fichas que respondem à pergunta",
         description:
-          "Busca, filtros e paginação determinística tornam uma base extensa navegável sem resultados que mudam de posição sem motivo.",
+          "Valores por 100 g e por porção caseira da USDA, registros similares e do mesmo nome no HTML, e texto próprio nos alimentos mais buscados. Ausência e zero são estados diferentes.",
       },
       {
-        title: "Comparação nutricional",
+        title: "Rankings por nutriente",
         description:
-          "Alimentos podem ser comparados por nutrientes, porção e proximidade, com ausência e zero tratados como estados diferentes.",
+          "Doze páginas ordenam os 13,6 mil registros por um nutriente, dizem quantos o informam e ligam cada alimento à sua ficha, em inglês, português e espanhol.",
       },
       {
-        title: "Cálculo e exportação",
+        title: "Busca e comparação",
         description:
-          "O usuário ajusta a quantidade da porção, recalcula os valores e exporta os recortes relevantes para CSV.",
+          "Busca por relevância com full-text do PostgreSQL, filtros por categoria e nutriente, comparação lado a lado, código de barras para produtos e diário com totais do dia.",
       },
       {
         title: "Transparência de fonte",
         description:
-          "A origem USDA permanece explícita e o score experimental é apresentado com limites claros, sem pretensão clínica.",
+          "Página de metodologia com datasets, release da USDA, valores diários da FDA, tratamento de ausências e a fórmula do escore experimental, sem pretensão clínica.",
       },
     ],
     technologies: [
@@ -265,6 +265,7 @@ export const projects: Project[] = [
       "PostgreSQL",
       "Supabase",
       "Prisma",
+      "next-intl",
       "Tailwind CSS",
       "Vitest",
     ],
@@ -447,56 +448,56 @@ const englishProjects: Record<Project["slug"], ProjectTranslation> = {
     scope: "Product · Data · Engineering",
     headline: "Explore foods and compare nutrients without losing source context.",
     summary:
-      "A nutrition data explorer derived from USDA data, with search, filters, comparison, portion calculations, and export in a readable interface.",
+      "A public explorer of USDA nutrition data: 13.6k foods in three languages, food pages with real portions, related records and nutrient rankings, plus comparison, barcode lookup and a food diary.",
     visual: {
       variant: "nutrition",
       eyebrow: "Search → comparison → context",
       statement: "A structured technical foundation for investigation, not prescription.",
-      signals: ["USDA", "Comparison", "CSV"],
+      signals: ["USDA", "3 languages", "Rankings"],
     },
     note:
       "The nutrition score is an experimental, unvalidated heuristic. DataNutri is an informational tool, not medical advice.",
     challenge:
       "Nutrition datasets are extensive, full of missing values, and difficult to compare. The challenge was to enable fast investigation without turning absence into zero, oversimplifying the source, or presenting an experimental metric as clinical truth.",
     response:
-      "The solution provides search, filters, and deterministic pagination; server-rendered food pages; nutrient comparison; similarity ranking; portion calculations; and CSV export. The application queries a read-only replica and keeps the original data accessible.",
+      "Every food has a server-rendered page with the per-100 g table, USDA household portions, similar and same-name records, and, for the most searched records, text written from their own values. Twelve ranking pages order the catalog by nutrient. A methodology page documents datasets, Daily Values, missing values and the score. Relevance-ranked search in PostgreSQL, comparison, barcode lookup, a diary and recipes complete the product, served in English, Portuguese and Spanish.",
     evidence: [
       {
-        value: "Online",
-        label: "public product",
-        detail: "The experience can be accessed and evaluated on the project domain.",
+        value: "13.6k",
+        label: "foods in 3 languages",
+        detail: "Foundation, SR Legacy and FNDDS with hand-translated names; Branded Foods with full-text search.",
       },
       {
         value: "USDA",
         label: "declared source",
-        detail: "The data origin and the score’s limitations remain explicit.",
+        detail: "Origin, release, Daily Values and the score’s limits documented on the methodology page.",
       },
       {
-        value: "5 flows",
-        label: "verifiable deliveries",
-        detail: "Search, comparison, similarity, portion calculation, and CSV export.",
+        value: "12 rankings",
+        label: "nutrient pages",
+        detail: "The 100 foods highest in protein, fiber, potassium, selenium, lysine and more per 100 g, with coverage per dataset.",
       },
     ],
     features: [
       {
-        title: "Predictable exploration",
+        title: "Food pages that answer the question",
         description:
-          "Search, filters, and deterministic pagination make a large dataset navigable without unexplained result reordering.",
+          "Values per 100 g and per USDA household portion, similar and same-name records in the HTML, and hand-written text on the most searched foods. Missing values and zero are different states.",
       },
       {
-        title: "Nutrition comparison",
+        title: "Nutrient rankings",
         description:
-          "Foods can be compared by nutrients, portion, and similarity, with missing values and zero treated as different states.",
+          "Twelve pages order the 13.6k records by one nutrient, say how many report it and link every food to its page, in English, Portuguese and Spanish.",
       },
       {
-        title: "Calculation and export",
+        title: "Search and comparison",
         description:
-          "Users adjust portion size, recalculate values, and export relevant slices to CSV.",
+          "Relevance search with PostgreSQL full-text, category and nutrient filters, side-by-side comparison, barcode lookup for products and a diary with daily totals.",
       },
       {
         title: "Source transparency",
         description:
-          "The USDA origin remains explicit and the experimental score is shown with clear limits and no clinical claim.",
+          "A methodology page with datasets, USDA release, FDA Daily Values, handling of missing values and the formula of the experimental score, with no clinical claim.",
       },
     ],
     gallery: [
